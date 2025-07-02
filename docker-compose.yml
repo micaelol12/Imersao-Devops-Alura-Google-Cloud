@@ -1,0 +1,11 @@
+services:
+  # Serviço da API (FastAPI)
+  app:
+    build: .
+    container_name: fastapi_api
+    volumes:
+      # Monta o diretório atual no container para live-reloading
+      # O banco de dados SQLite (escola.db) será criado aqui.
+      - .:/app 
+    ports:
+      - "8000:8000"
